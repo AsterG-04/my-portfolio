@@ -37,7 +37,7 @@ export default function Projects() {
     {
       title: "AI Support Bot",
       desc: "Emotional support app in progress using Python + Flutter + AI/NLP concepts.",
-      href: "/projects/ai",
+      href: "/projects/ai", // ✅ fixed here
     },
   ];
 
@@ -56,13 +56,12 @@ export default function Projects() {
         {projects.map((proj, i) => (
           <Link key={i} href={proj.href}>
             <motion.div
-                className="cursor-pointer bg-gray-800/60 p-6 rounded-2xl shadow-lg border border-gray-700 
-                          hover:border-cyan-400 hover:bg-gray-800/80 
-                          transition-transform transform hover:scale-105 hover:shadow-cyan-400/30"
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-              >
-
+              className="cursor-pointer bg-gray-800/60 p-6 rounded-2xl shadow-lg border border-gray-700 
+                         hover:border-cyan-400 hover:bg-gray-800/80 
+                         transition-transform transform hover:scale-105 hover:shadow-cyan-400/30"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.3 }}
+            >
               <h3 className="text-2xl font-semibold text-cyan-300 mb-2">
                 {proj.title}
               </h3>

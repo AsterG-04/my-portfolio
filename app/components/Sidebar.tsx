@@ -15,24 +15,29 @@ export default function Sidebar() {
 
   return (
     <div className="fixed left-0 top-0 h-full w-20 bg-black flex flex-col items-center py-6 space-y-6">
-      {/* Owl Robot Logo */}
-      <div className="text-center mb-10">
-        <div className="w-16 h-16 rounded-full bg-cyan-500 flex items-center justify-center text-black font-bold">
-          🤖
-        </div>
-        <p className="text-cyan-400 text-sm mt-2">Robot</p>
-      </div>
+      {/* Owl Robot Logo (optional) */}
+      <div className="text-center mb-10"></div>
 
-      {/* Navigation Dots */}
+      {/* Navigation Circles */}
       {navItems.map((item) => (
         <Link key={item.href} href={item.href}>
-          <div
-            className={`w-16 h-16 rounded-full cursor-pointer transition-transform hover:scale-110 ${
-              pathname === item.href
-                ? "bg-cyan-300 ring-4 ring-cyan-500"
-                : "bg-cyan-400 hover:bg-cyan-200"
-            }`}
-          />
+          <div className="relative group">
+            {/* Circle */}
+            <div
+              className={`w-16 h-16 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 
+                ${pathname === item.href
+                  ? "bg-cyan-300 ring-4 ring-cyan-500 text-black font-semibold"
+                  : "bg-cyan-400 hover:bg-cyan-200 text-black font-semibold"
+                }`}
+            >
+              {/* Text (hidden until hover) */}
+              <span
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm"
+              >
+                {item.label}
+              </span>
+            </div>
+          </div>
         </Link>
       ))}
     </div>

@@ -1,8 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants, MotionProps } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
-const cardVariants = {
+// Add a typed motion.a for proper custom & variants typing
+const MotionAnchor = motion.a as React.FC<React.ComponentProps<"a"> & MotionProps>;
+
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
@@ -58,7 +61,7 @@ export default function Contact() {
         {/* SVG Curvy Path */}
         <svg
           viewBox="0 0 400 750"
-          className="absolute h-full w-auto scale-x-[-1] translate-x-70" // shift right by 10px (adjust as needed)
+          className="absolute h-full w-auto scale-x-[-1] translate-x-70"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -92,7 +95,6 @@ export default function Contact() {
             }}
           />
         </svg>
-
 
         {/* ✉️ Email */}
         <motion.a
@@ -147,7 +149,7 @@ export default function Contact() {
       {/* ===== MOBILE LAYOUT ===== */}
       <div className="md:hidden w-full max-h-[75vh] overflow-y-auto py-4 flex flex-col items-center gap-4 px-2 pb-8">
         {mobileCards.map((card, i) => (
-          <motion.a
+          <MotionAnchor
             key={card.title}
             href={card.href}
             target="_blank"
@@ -155,14 +157,14 @@ export default function Contact() {
             custom={i}
             initial="hidden"
             animate={["visible", "float"]}
-            variants={cardVariants as any}
+            variants={cardVariants}
           >
             {card.icon}
             <div className="text-center">
               <h3 className="text-lg font-bold text-cyan-300">{card.title}</h3>
               <p className="text-cyan-100 text-sm break-words">{card.text}</p>
             </div>
-          </motion.a>
+          </MotionAnchor>
         ))}
       </div>
     </motion.main>

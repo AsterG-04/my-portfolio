@@ -16,7 +16,7 @@ export default function ProjectPage({
   images: string[];
   lazyLoadStartFrom?: number;
 }) {
-  const isPhone = ["ai", "note-taking", "women-safety-app"].includes(folder);
+  // const isPhone = ["ai", "note-taking", "women-safety-app"].includes(folder);
 
   return (
     <motion.main

@@ -155,7 +155,7 @@ export default function Contact() {
             custom={i}
             initial="hidden"
             animate={["visible", "float"]}
-            variants={cardVariants}
+            variants={cardVariants as any}
           >
             {card.icon}
             <div className="text-center">

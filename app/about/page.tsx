@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.main
-      className="flex flex-col items-center min-h-screen text-white bg-gradient-to-b from-black to-gray-900 px-8 py-16 overflow-y-auto"
+      className="flex flex-col items-center min-h-screen text-white bg-gradient-to-b from-black to-gray-900 px-4 sm:px-6 md:px-8 py-12 md:py-16 overflow-y-auto"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
       {/* Title */}
       <motion.h2
-        className="text-5xl font-extrabold text-cyan-400 mb-10 tracking-wide"
+        className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-10 tracking-wide"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -21,7 +21,7 @@ export default function About() {
 
       {/* Professional Summary */}
       <motion.section
-        className="max-w-4xl text-center text-gray-300 leading-relaxed mb-12"
+        className="w-full max-w-xl sm:max-w-2xl md:max-w-4xl text-center text-gray-300 leading-relaxed mb-12"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
@@ -64,7 +64,7 @@ export default function About() {
         <h3 className="text-2xl font-bold text-cyan-300 mb-4 text-center">
           My Personal Statement 💭
         </h3>
-        <div className="max-h-[400px] overflow-y-auto text-gray-300 leading-relaxed scrollbar-thin scrollbar-thumb-cyan-500 scrollbar-track-gray-800 p-4">
+        <div className="max-h-80 sm:max-h-96 md:max-h-[400px] overflow-y-auto text-gray-300 leading-relaxed scrollbar-thin scrollbar-thumb-cyan-500 scrollbar-track-gray-800 p-4">
           <p className="mb-4">
             Growing up in Myanmar, I learned that opportunities aren’t always given—they must be created. Early challenges
             taught me resilience, curiosity, and the value of independent learning. These experiences motivated me to
@@ -91,7 +91,7 @@ export default function About() {
         <h3 className="text-2xl font-bold text-cyan-300 mb-4 text-center">
           Languages & Skills 🌐
         </h3>
-        <div className="text-gray-300 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="text-gray-300 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <p>🇲🇲 Burmese – Native</p>
             <p>🇬🇧 English – Advanced (C1)</p>

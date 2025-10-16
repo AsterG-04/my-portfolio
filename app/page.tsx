@@ -1,7 +1,7 @@
 "use client";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useEffect, useRef, useState, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
@@ -14,9 +14,7 @@ function Avatar() {
 
   useFrame(() => {
     const time = clock.getElapsedTime();
-    // Floating effect
     scene.position.y = -1.5 + Math.sin(time) * 0.05;
-    // Slow rotation & slight tilt
     scene.rotation.y += 0.002;
     scene.rotation.x = -0.05;
   });
@@ -30,7 +28,6 @@ export default function Home() {
   const message =
     "But remember — don’t judge a book by its cover; what’s inside might just surprise you.";
 
-  // Typewriter effect
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -41,18 +38,22 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex justify-between items-center h-screen text-white bg-gradient-to-b from-gray-900 to-black px-20">
-      {/* Left Section */}
+    <main className="flex flex-col md:flex-row justify-between items-center min-h-screen text-white bg-gradient-to-b from-gray-900 to-black px-4 sm:px-12 md:px-20 py-12 md:py-0">
+      {/* Left Section - Text */}
       <motion.div
-        className="flex flex-col justify-center max-w-lg"
+        className="flex flex-col justify-center max-w-lg text-center md:text-left order-1 md:order-none"
         initial={{ y: 20 }}
         animate={{ y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-5xl font-bold">Hi, I’m Chaw Thiri Win 👋</h1>
-        <p className="mt-6 text-lg text-gray-300">Welcome to my futuristic portfolio!</p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          Hi, I’m Chaw Thiri Win 👋
+        </h1>
+        <p className="mt-4 text-base sm:text-lg text-gray-300">
+          Welcome to my futuristic portfolio!
+        </p>
         <motion.p
-          className="mt-4 text-lg text-cyan-300 font-mono"
+          className="mt-4 text-sm sm:text-lg text-cyan-300 font-mono leading-relaxed"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 1 }}
@@ -63,7 +64,7 @@ export default function Home() {
 
       {/* Right Section - 3D Avatar */}
       <motion.div
-        className="w-1/2 h-[500px]"
+        className="w-full md:w-1/2 h-[250px] sm:h-[400px] md:h-[500px] mt-10 md:mt-0 order-2 md:order-none"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 1 }}

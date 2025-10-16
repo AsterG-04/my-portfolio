@@ -34,7 +34,7 @@ export default function ProjectPage({
         {images.map((img, i) => (
           <motion.div
             key={i}
-            className="relative overflow-hidden rounded-xl border border-gray-700 shadow-lg hover:shadow-cyan-400/30 bg-gray-800/40 w-full h-80 sm:h-64"
+            className="relative overflow-hidden rounded-xl border border-gray-700 shadow-lg hover:shadow-cyan-400/30 bg-gray-800/40 w-full h-56 sm:h-64 md:h-80"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.25 }}
           >

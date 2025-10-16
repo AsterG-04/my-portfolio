@@ -1,10 +1,10 @@
+// app/layout.tsx
 import "./globals.css";
-import Sidebar from "./components/Sidebar";
-import Owl from "./components/Owl";
+import Sidebar from "./components/Sidebar"; // adjust path if needed
 
 export const metadata = {
-  title: "Portfolio",
-  description: "My Futuristic Portfolio",
+  title: "My Portfolio",
+  description: "Portfolio of Chaw Thiri Win",
 };
 
 export default function RootLayout({
@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white">
+        {/* Sidebar is outside pages */}
         <Sidebar />
-        
-        <main className="ml-20">{children}</main>
+        <main className="ml-0 md:ml-20">{children}</main>
       </body>
     </html>
   );

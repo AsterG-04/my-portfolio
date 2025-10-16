@@ -87,7 +87,7 @@ export default function Skills() {
       </h2>
 
       {/* Primary Skills (University & Most Used) */}
-      <section className="mb-12 w-full max-w-4xl">
+      <section className="mb-12 w-full max-w-xl sm:max-w-2xl md:max-w-4xl">
         <h3 className="text-2xl font-bold text-cyan-300 mb-4">Primary Skills</h3>
         {uniSkills.map(renderSkill)}
       </section>

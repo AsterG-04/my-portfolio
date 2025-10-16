@@ -34,10 +34,9 @@ export default function ProjectPage({
             key={i}
             className="relative overflow-hidden rounded-xl border border-gray-700 shadow-lg hover:shadow-cyan-400/30 bg-gray-800/40 w-full h-56 sm:h-64 md:h-80"
             whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.25 }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: i * 0.1 }}
+            transition={{ duration: 0.3, delay: i * 0.1, type: "tween" }}
           >
             <Image
               src={`/${folder}/${img}`}

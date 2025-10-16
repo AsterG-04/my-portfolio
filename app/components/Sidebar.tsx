@@ -19,7 +19,7 @@ export default function Sidebar() {
   return (
     <>
       {/* ===== Desktop Sidebar ===== */}
-      <div className="hidden lg:flex fixed left-0 top-0 h-full w-20 bg-black flex-col items-center py-6 space-y-6 z-50">
+      <div className="hidden lg:flex fixed left-0 top-10 h-[70%] w-20 bg-black flex-col items-center py-12 space-y-8 z-50 rounded-tr-2xl rounded-br-2xl">
         {navItems.map((item) => (
           <Link key={item.href} href={item.href}>
             <div className="relative group">
@@ -41,6 +41,7 @@ export default function Sidebar() {
 
       {/* ===== Mobile Hamburger Button ===== */}
       <div className="lg:hidden fixed top-4 left-4 z-50">
+
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 rounded-md bg-black text-white shadow-md focus:outline-none"
@@ -51,7 +52,7 @@ export default function Sidebar() {
 
       {/* ===== Mobile Sidebar Drawer ===== */}
       <div
-        className={`lg:hidden fixed top-0 left-0 h-full w-64 bg-black z-40 transform transition-transform duration-300 ${
+        className={`lg:hidden fixed top-5 left-0 h-full w-64 bg-black z-40 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

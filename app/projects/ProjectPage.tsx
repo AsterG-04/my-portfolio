@@ -16,8 +16,6 @@ export default function ProjectPage({
   images: string[];
   lazyLoadStartFrom?: number;
 }) {
-  // const isPhone = ["ai", "note-taking", "women-safety-app"].includes(folder);
-
   return (
     <motion.main
       className="flex flex-col items-center min-h-screen text-white bg-gradient-to-b from-gray-900 to-black px-6 py-16"
@@ -37,13 +35,17 @@ export default function ProjectPage({
             className="relative overflow-hidden rounded-xl border border-gray-700 shadow-lg hover:shadow-cyan-400/30 bg-gray-800/40 w-full h-56 sm:h-64 md:h-80"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.25 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: i * 0.1 }}
           >
             <Image
               src={`/${folder}/${img}`}
               alt={`${title} Screenshot ${i + 1}`}
               fill
-              className="object-contain"
-              loading={i >= lazyLoadStartFrom ? "lazy" : "eager"}
+              className="object-contain transition-opacity duration-300 ease-in-out"
+              loading={i < 3 ? "eager" : "lazy"} // preload first 3 for faster display
+              priority={i < 3}
             />
           </motion.div>
         ))}
@@ -58,4 +60,3 @@ export default function ProjectPage({
     </motion.main>
   );
 }
-

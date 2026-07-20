@@ -1,26 +1,8 @@
 "use client";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import * as THREE from "three";
 
-// 3D Avatar Component
-function Avatar() {
-  const { scene } = useGLTF(
-    "https://models.readyplayer.me/68efaca00e979cf6fb19f529.glb"
-  );
-  const clock = new THREE.Clock();
-
-  useFrame(() => {
-    const time = clock.getElapsedTime();
-    scene.position.y = -1.5 + Math.sin(time) * 0.05;
-    scene.rotation.y += 0.002;
-    scene.rotation.x = -0.05;
-  });
-
-  return <primitive object={scene} scale={1.3} />;
-}
+// 3D avatar removed.
 
 // Main Page Component
 export default function Home() {
@@ -62,23 +44,7 @@ export default function Home() {
         </motion.p>
       </motion.div>
 
-      {/* Right Section - 3D Avatar */}
-      <motion.div
-        className="w-full md:w-1/2 h-[250px] sm:h-[400px] md:h-[500px] mt-10 md:mt-0 order-2 md:order-none"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-      >
-        <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
-          <ambientLight intensity={1.2} />
-          <directionalLight position={[2, 2, 5]} intensity={1} />
-          <directionalLight position={[-2, 2, 5]} intensity={0.5} color="#0ff" />
-          <Suspense fallback={null}>
-            <Avatar />
-          </Suspense>
-          <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1.2} />
-        </Canvas>
-      </motion.div>
+      {/* Right section removed (3D avatar) */}
     </main>
   );
 }

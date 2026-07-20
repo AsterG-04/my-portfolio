@@ -95,6 +95,7 @@ export default function About() {
           <div>
             <p>🇲🇲 Burmese – Native</p>
             <p>🇬🇧 English – Advanced (C1)</p>
+            <p>🇩🇪 German – A2.2</p>
             <p>🇮🇳 Hindi – Native</p>
             <p>🇨🇳 Chinese – Beginner (self-taught; can understand simple dialogues and casual short conversations)</p>
           </div>

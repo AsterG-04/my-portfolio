@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy / Hosting (this project)
+
+This repository is configured to deploy to **Firebase Hosting** via GitHub Actions. Pushing to the `main` branch triggers a workflow that builds the site and deploys to the Firebase project `my-portfolio-e1d3f`.
+
+- Firebase Hosting site (likely): https://my-portfolio-e1d3f.web.app
+- Alternate URL: https://my-portfolio-e1d3f.firebaseapp.com
+
+If you prefer Vercel instead, I can help connect the repo and set up automatic deployments there — just say the word.
